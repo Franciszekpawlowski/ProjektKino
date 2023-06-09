@@ -6,27 +6,23 @@ MODULES="pgsql"
 
 cd $PROJECTFOLDER || exit
 
-docker run --rm --interactive --tty \
-  --volume "$(pwd)":/app \
-  composer \
-  bash -c "composer require laravel/sail --dev"
-
 cp .env.example .env
 
 docker run --rm \
     -v "$(pwd)":/opt \
     -w /opt \
     laravelsail/php82-composer:latest \
-    bash -c "php artisan key:generate"
-
-docker run --rm \
-    -v "$(pwd)":/opt \
-    -w /opt \
-    laravelsail/php82-composer:latest \
-    bash -c "php artisan sail:install --with=$(echo $MODULES | tr ',' ',')"
+    bash -c "composer require laravel/sail --dev && \
+    php artisan key:generate && \
+    php artisan sail:install --with=$(echo $MODULES | tr ',' ',')"
 
 ./vendor/bin/sail build
 ./vendor/bin/sail pull $MODULES
+
+./vendor/bin/sail up -d
+sleep 5
+./vendor/bin/sail artisan migrate
+./vendor/bin/sail stop
 
 if sudo -n true 2>/dev/null; then
     sudo chown -R $USER: .
