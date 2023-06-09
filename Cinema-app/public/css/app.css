@@ -1,0 +1,35 @@
+body {
+    background-color: #000; /* Set background to dark */
+    color: #fff; /* Set text color to white */
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+}
+
+.nav a {
+    background-color: purple;
+    color: #fff;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2em 0;
+}
+
+.movie-card {
+    background-color: #333;
+    margin: 1em;
+    padding: 1em;
+    width: 30%;
+}
+
+.movie-card img {
+    width: 100%;
+}
