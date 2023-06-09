@@ -1,0 +1,71 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Bootstrap",
+            "type": "shell",
+            "command": "./bootstrap.sh",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "up d",
+            "type": "shell",
+            "command": "cd Cinema-app && ./vendor/bin/sail up -d",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "artisan migrate",
+            "type": "shell",
+            "command": "cd Cinema-app && ./vendor/bin/sail artisan migrate",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "down",
+            "type": "shell",
+            "command": "cd Cinema-app && ./vendor/bin/sail stop",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            }
+        },
+        {
+            "label": "migration",
+            "dependsOn": [
+                "up d",
+                "artisan migrate",
+                "down"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
