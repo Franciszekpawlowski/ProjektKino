@@ -1,0 +1,51 @@
+.cinema-screen-container {
+    position: relative;
+    width: 100%; /* adjust according to your needs */
+    height: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.cinema-screen {
+    width: 100%;
+    height: auto;
+}
+
+.movie-display {
+    position: absolute;
+    top: 43.5%; /* adjust according to your needs */
+    left: 45%; /* adjust according to your needs */
+    transform: translate(-50%, -50%);
+    /* Movie elements styling goes here */
+}
+.movie-container {
+    width: 70vw; /* Set the width to 80% of the viewport width */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2em auto; /* centered on the page */
+}
+.movie-card {
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex; /* New property: Use Flexbox */
+    align-items: center; /* New property: Vertically align items in the middle */
+    gap: 20px; /* New property: Add some gap between the image and the text */
+    transition: transform 1s, opacity 1s; /* Adjust duration as needed */
+}
+.movie-card.out-of-view {
+    transform: translateY(-100px); /* Adjust distance as needed */
+    opacity: 0;
+}
+
+.movie-card img {
+    width: 100%; /* Adjust this value as per your needs */
+    object-fit: cover; /* Make sure the image covers the space without distorting */
+}
+.movie-info {
+    text-align: right;
+}

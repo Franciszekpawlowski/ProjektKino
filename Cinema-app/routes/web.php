@@ -17,3 +17,4 @@ use App\Http\Controllers\CinemaController;
 
 
 Route::get('/', [CinemaController::class, 'index']);
+Route::get('/next-movie/{id}', [CinemaController::class, 'nextMovie']);

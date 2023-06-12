@@ -7,12 +7,26 @@ use App\Models\Movie;
 
 class CinemaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Retrieve all movies from the database
-        $movies = Movie::all();
-
-        // Pass them to the view
-        return view('cinema.index', ['movies' => $movies]);
+        if ($request->ajax()) {
+            $movies = Movie::paginate(1);
+            return view('movies.partial', ['movies' => $movies])->render();
+        } else {
+            $movies = Movie::paginate(1);
+            return view('cinema.index', ['movies' => $movies]);
+        }
     }
+
+    public function nextMovie($id)
+    {
+        $movie = Movie::where('id', '>', $id)->orderBy('id')->first();
+        if (!$movie) {
+            // If there's no next movie, wrap around to the first one
+            $movie = Movie::orderBy('id')->first();
+        }
+
+        return response()->json($movie);
+    }
+
 }
