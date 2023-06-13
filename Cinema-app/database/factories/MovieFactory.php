@@ -22,7 +22,7 @@ class MovieFactory extends Factory
             'title' => fake() -> words(2, true),
             'description' => fake() -> sentence(),
             'length' => fake() -> time('H:i:s'),
-            'imagePath' => "storage/moviePicture/" . basename($fakeImagePath),
+            'imagePath' => "/storage/moviePicture/" . basename($fakeImagePath),
         ];
     }
 }
