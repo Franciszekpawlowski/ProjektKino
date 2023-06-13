@@ -12,6 +12,8 @@ class MovieSeeder extends Seeder
      */
     public function run(): void
     {
+        \Storage::deleteDirectory("public/moviePicture");
+
         \App\Models\Movie::factory() -> count(10) -> create();
     }
 }
