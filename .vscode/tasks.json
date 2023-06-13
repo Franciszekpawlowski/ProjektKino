@@ -38,7 +38,7 @@
                 "up d"
             ],
             "type": "shell",
-            "command": "cd Cinema-app && ./vendor/bin/sail artisan migrate",
+            "command": "cd Cinema-app && ./vendor/bin/sail artisan migrate:fresh --seed",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
