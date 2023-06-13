@@ -15,14 +15,16 @@ docker run --rm \
     laravelsail/php82-composer:latest \
     bash -c "composer require laravel/sail --dev && \
     php artisan key:generate && \
-    php artisan sail:install --with=$(echo $MODULES | tr ',' ',')"
-
+    php artisan sail:install --with=pgsql --devcontainer"
+#$(echo $MODULES | tr ',' ',')
 ./vendor/bin/sail build
 ./vendor/bin/sail pull $MODULES
 
 ./vendor/bin/sail up -d
 sleep 5
 ./vendor/bin/sail artisan migrate
+./vendor/bin/sail yarn
+./vendor/bin/sail yarn run build
 ./vendor/bin/sail stop
 
 if sudo -n true 2>/dev/null; then
