@@ -33,7 +33,10 @@
             }
         },
         {
-            "label": "artisan migrate",
+            "label": "migrate",
+            "dependsOn":[
+                "up d"
+            ],
             "type": "shell",
             "command": "cd Cinema-app && ./vendor/bin/sail artisan migrate",
             "presentation": {
@@ -46,9 +49,12 @@
             }
         },
         {
-            "label": "down",
+            "label": "yarn",
+            "dependsOn":[
+                "up d"
+            ],
             "type": "shell",
-            "command": "cd Cinema-app && ./vendor/bin/sail stop",
+            "command": "cd Cinema-app && ./vendor/bin/sail yarn && ./vendor/bin/sail yarn run build",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -57,15 +63,6 @@
                 "showReuseMessage": true,
                 "clear": false
             }
-        },
-        {
-            "label": "migration",
-            "dependsOn": [
-                "up d",
-                "artisan migrate",
-                "down"
-            ],
-            "problemMatcher": []
         }
     ]
 }
