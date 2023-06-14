@@ -29,4 +29,30 @@ class MoviesController extends Controller
             'movie' => $movie
         ]);
     }
+
+    public function create()
+    {
+        return view('movies.create');
+    }
+
+    public function store()
+    {
+        $data = request()->validate([
+            'title' => 'required',
+            'description' => '',
+            'image' => 'image',
+            'time' => 'required'
+        ]);
+
+        $filePath = request('image') -> store("moviePicture",'public');
+
+        Movie::create([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'length' => $data['time'],
+            'imagePath' => "/storage/" . $filePath
+        ]);
+
+        return redirect('/movie');
+    }
 }

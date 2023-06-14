@@ -21,6 +21,9 @@ Route::get('/', function () {
 });
 
 Route::get('/movie', [MoviesController::class, 'index'] )->name("movies.index");
+Route::post('/movie', [MoviesController::class, 'store'] )->name('movies.store');
+Route::get('/movie/create', [MoviesController::class, 'create'] )->name("movies.create");
 Route::get('/movie/{movie}', [MoviesController::class, 'show'] )->name("movies.show");
 
-Route::get('/seance/{seance}', [SeanceController::class, 'show'])->name('seance.show');
+// Route::get('/seance', [SeanceController::class, 'index'])->name('seance.index');
+// Route::get('/seance/{seance}', [SeanceController::class, 'show'])->name('seance.show');
