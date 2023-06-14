@@ -14,4 +14,9 @@ class Movie extends Model
         'description',
         'length'
     ];
+
+    public function seances()
+    {
+        return $this->hasMany(Seance::class);
+    }
 }
