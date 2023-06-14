@@ -9,10 +9,12 @@ class Movie extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
     protected $fillable = [
         'title',
         'description',
-        'length'
+        'length',
+        'imagePath'
     ];
 
     public function seances()
