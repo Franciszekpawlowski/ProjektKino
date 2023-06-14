@@ -12,7 +12,11 @@ class MovieSeeder extends Seeder
      */
     public function run(): void
     {
+        $path = "public/moviePicture";
+        
         \Storage::deleteDirectory("public/moviePicture");
+        sleep(0.5);
+        \Storage::makeDirectory($path);
 
         \App\Models\Movie::factory() -> count(10) -> create();
     }
