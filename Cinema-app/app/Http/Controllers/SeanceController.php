@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Seance;
 use Illuminate\Http\Request;
+use PHPUnit\TextUI\Configuration\Group;
 
 class SeanceController extends Controller
 {
@@ -12,7 +13,11 @@ class SeanceController extends Controller
      */
     public function index()
     {
-        //
+        $seance = Seance::all()->sortBy('movie_id')->GroupBy('movie_id');
+        // dd($seance);
+        return view('seance.index', [
+            'seancesListGroup' => $seance
+        ]);
     }
 
     /**
