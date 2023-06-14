@@ -29,6 +29,9 @@
     </style>
 </head>
 <body>
+    <div>
+        <a href="/movie/create">Add new movie</a>
+    </div>
     <div class="container">
         <div class="row">
         @foreach ( $movies as $movie)

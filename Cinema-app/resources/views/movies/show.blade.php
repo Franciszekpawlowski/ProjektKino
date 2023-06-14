@@ -31,22 +31,35 @@
 <body>
     <div class="container">
         <div class="row">
-            <a href="/movie/{{ $movie->id }}">
-                <div class="col-6">
+            <div class="col-6">
+                <div>
+                    <img src="{{ $movie->imagePath }}">
+                </div>
+                <div>
+                    <h1>{{ $movie->title }}</h1>
+                </div>
+                <div>
+                    {{ $movie->description }}
+                </div>
+                <div>
+                    {{ $movie->length }}
+                </div>
+            </div>
+            <div>
+                @foreach ( $movie->seances as $seances)
+                <div>
                     <div>
-                        <img src="{{ $movie->imagePath }}">
+                        {{ $seances -> cinema -> location}}
                     </div>
                     <div>
-                        <h1>{{ $movie->title }}</h1>
+                        {{ $seances -> cinema -> name}}
                     </div>
                     <div>
-                        {{ $movie->description }}
-                    </div>
-                    <div>
-                        {{ $movie->length }}
+                        {{ $seances -> start_time }}
                     </div>
                 </div>
-            </a>
+                @endforeach
+            </div>
         </div>
     </div>
 </body>
