@@ -20,8 +20,6 @@ class MovieFactory extends Factory
         $path = "public/moviePicture";
         $fullPath = "app/$path";
 
-        \Storage::makeDirectory($path);
-
         $fakeImagePath = $this->faker->image(storage_path($fullPath),200,200, fullPath: false);
 
         return [
