@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\SeanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::get('/', function () {
 
 Route::get('/movie', [MoviesController::class, 'index'] )->name("movies.index");
 Route::get('/movie/{movie}', [MoviesController::class, 'show'] )->name("movies.show");
+
+Route::get('/seance/{seance}', [SeanceController::class, 'show'])->name('seance.show');
