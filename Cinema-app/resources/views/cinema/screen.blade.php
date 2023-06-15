@@ -1,15 +1,13 @@
-<div class="cinema-screen-container">
-    <img class="cinema-screen" src="/images/empty-movie-theatre.jpg" alt="Cinema Screen">
-    <div class="movie-display">
-        @if($movies->count() > 0)
-            <div class="movie-card" data-id="{{ $movies->first()->id }}">
-                <img src="{{ $movies->first()->poster }}" alt="{{ $movies->first()->title }}">
-                <div class="text-content"> 
-                    <h2>{{ $movies->first()->title }}</h2>
-                    <p class="movie-duration">{{ $movies->first()->duration }} minutes</p>
-                    <p class="movie-description">{{ $movies->first()->description }}</p>
-                </div>
+<section class="movie-display" style="position: relative; height: 100vh; overflow: hidden;">
+    @foreach ($movies as $movie)
+        <div class="movie-card" data-id="{{ $movie->id }}" style="transform: translateY(0);">
+            <img src="{{ $movie->poster }}" alt="{{ $movie->title }}">
+            <div class="text-content">
+                <h2>{{ $movie->title }}</h2>
+                <p class="movie-duration">{{ $movie->duration }} minutes</p>
+                <p class="movie-description">{{ $movie->description }}</p>
             </div>
-        @endif
-    </div>
-</div>
+        </div>
+    @endforeach
+</section>
+
