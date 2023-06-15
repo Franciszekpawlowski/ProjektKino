@@ -55,4 +55,33 @@ class MoviesController extends Controller
 
         return redirect('/movie');
     }
+
+    public function edit(Movie $movie)
+    {
+        return view('movies.edit',compact('movie'));
+    }
+
+    public function update(Movie $movie)
+    {
+        $data = request()->validate([
+            'title' => '',
+            'description' => '',
+            'image' => 'image',
+            'time' => ''
+        ]);
+
+        $movie->update($data);
+        return redirect("/movie/{$movie->id}");    
+    }
+
+    public function destroy(Movie $movie)
+    {
+        foreach ($movie->seances() as $seances ) {
+            $seances->delete();
+        }
+
+        $movie->delete();
+
+        return redirect('/movie');
+    }
 }

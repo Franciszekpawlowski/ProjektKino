@@ -31,6 +31,16 @@
 <body>
     <div class="container">
         <div class="row">
+            <div>
+                <div class="row pt-4">
+                    <a href="/movie/{{ $movie->id }}/edit">edit movie</a>
+                    <form action="/movie/{{ $movie->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button class="text">Delete Movie</button>
+                    </form>
+                </div>    
+            </div>
             <div class="col-6">
                 <div>
                     <img src="{{ $movie->imagePath }}">
