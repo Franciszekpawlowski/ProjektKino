@@ -16,9 +16,12 @@ use App\Http\Controllers\SeanceController;
 */
 
 
-Route::get('/', function () {
-    return view('home');
-});
+
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::get('/', [CinemaController::class, 'index']);
+Route::get('/next-movie/{id}', [CinemaController::class, 'nextMovie']);
 
 Route::get('/movie', [MoviesController::class, 'index'] )->name("movies.index");
 
