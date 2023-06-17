@@ -22,24 +22,13 @@
 <div class="cinema-screen-container">
     <section class="movie-display">
         <div class="movie-container">
-            @foreach ($movies as $movie)
-                <div class="movie-card" data-id="{{ $movie->id }}">
-                    <img src="{{ $movie->poster }}" alt="{{ $movie->title }}">
-                    <div class="text-content">
-                        <h2>{{ $movie->title }}</h2>
-                        <p class="movie-duration">{{ $movie->duration }} minutes</p>
-                        <p class="movie-description">{{ $movie->description }}</p>
-                    </div>
-                </div>
-            @endforeach
+            @yield('content')
         </div>
     </section>
 </div>
-
 
 <!-- JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/js/infinite-scroll.js"></script>
 </body>
 </html>
-

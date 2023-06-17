@@ -38,7 +38,7 @@ function fetchNextMovie() {
             newMovieCard.dataset.id = data.id;
             newMovieCard.style.transform = 'translateY(100%)'; // Start the new card below the view
             newMovieCard.innerHTML = `
-                <img src="${data.poster}" alt="${data.title}">
+                <img src="${data.imagePath}" alt="${data.title}">
                 <div class="text-content">
                     <h2>${data.title}</h2>
                     <p class="movie-duration">${data.duration} minutes</p>
