@@ -1,0 +1,30 @@
+.nav {
+    background-color: #333; /* dark grey */
+    height: 60px;
+    display: flex;
+    justify-content: flex-start; /* aligns items to the left */
+    align-items: center;
+    padding: 0 10px;
+}
+
+.nav img {
+    height: 50px;
+}
+
+.nav a {
+    color: purple; /* link text color */
+    text-decoration: none;
+    margin: 0 25px; /* adjust this value to increase or decrease the distance between the links */
+    padding: 10px; /* add padding to increase the overall size of the link */
+    border: 2px solid #800080; /* add border around the link, you can change color as per your requirement */
+    font-size: 20px; /* adjust the font size of the link text */
+}
+
+.nav .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

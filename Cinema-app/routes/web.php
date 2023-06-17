@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [CinemaController::class, 'index']);
+Route::get('/next-movie/{id}', [CinemaController::class, 'nextMovie']);
