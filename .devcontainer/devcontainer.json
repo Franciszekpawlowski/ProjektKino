@@ -22,7 +22,7 @@
 		}
 	},
 	"remoteUser": "sail",
-	"postCreateCommand": "php artisan migrate && yarn && yarn run build"
+	"postCreateCommand": "php artisan migrate:fresh --seed && yarn && yarn run build"
 	// "forwardPorts": [],
 	// "runServices": [],
 	// "shutdownAction": "none",

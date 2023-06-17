@@ -22,7 +22,7 @@ docker run --rm \
 
 ./vendor/bin/sail up -d
 sleep 5
-./vendor/bin/sail artisan migrate
+./vendor/bin/sail artisan migrate:fresh --seed
 ./vendor/bin/sail yarn
 ./vendor/bin/sail yarn run build
 ./vendor/bin/sail stop
