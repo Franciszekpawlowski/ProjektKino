@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CinemaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\SeanceController;
