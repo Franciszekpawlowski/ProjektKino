@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CinemaController;
+use App\Http\Controllers\SeatsReservation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\SeanceController;
@@ -32,6 +33,8 @@ Route::get('/movie/{movie}', [MoviesController::class, 'show'] )->name("movies.s
 Route::get('/movie/{movie}/edit', [MoviesController::class, 'edit'] )->name("movies.edit");
 Route::patch('/movie/{movie}', [MoviesController::class, 'update'] )->name("movies.update");
 Route::delete('/movie/{movie}', [MoviesController::class, 'destroy'] )->name("movies.destroy");
+
+Route::get('/reservation', [SeatsReservation::class, 'index'] )->name("movies.index");
 
 // Route::get('/seance', [SeanceController::class, 'index'])->name('seance.index');
 // Route::get('/seance/{seance}', [SeanceController::class, 'show'])->name('seance.show');

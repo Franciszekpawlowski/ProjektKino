@@ -10,14 +10,15 @@
 <body>
     <!-- Navigation -->
     <div class="nav">
-    <img src="/path/to/logo.png" alt="Logo">
-    <div class="links">
-        <a href="#">Wybierz kino</a>
-        <a href="#">Repertuar</a>
-        <a href="#">Logowanie</a>
-        <a href="#">Rejestracja</a>
+        <img src="/path/to/logo.png" alt="Logo">
+        <div class="links">
+            <a href="/cinemas">Wybierz kino</a>
+            <a href="/repertoire">Repertuar</a>
+            <a href="/login">Logowanie</a>
+            <a href="/register">Rejestracja</a>
+        </div>
     </div>
-</div>
+
 
 <div class="cinema-screen-container">
     <section class="movie-display">
