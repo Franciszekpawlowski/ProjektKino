@@ -26,11 +26,13 @@ class CinemaController extends Controller
 
     public function create()
     {
+        $this->authorize('create',App\Models\Cinema::class);
         return view('cinemas.create');
     }
 
     public function store()
     {
+        $this->authorize('create',App\Models\Cinema::class);
         $data = request()->validate([
             'name' => 'required',
             'location' => '',
@@ -46,11 +48,14 @@ class CinemaController extends Controller
 
     public function edit(Cinema $cinema)
     {
+        $this->authorize('create',App\Models\Cinema::class);
         return view('cinemas.edit',compact('cinema'));
     }
 
     public function update(Cinema $cinema)
     {
+        $this->authorize('create',App\Models\Cinema::class);
+
         $data = request()->validate([
             'name' => '',
             'location' => '',
@@ -62,6 +67,8 @@ class CinemaController extends Controller
 
     public function destroy(Cinema $cinema)
     {
+        $this->authorize('create',App\Models\Cinema::class);
+
         foreach ($cinema->seances() as $seances ) {
             $seances->delete();
         }

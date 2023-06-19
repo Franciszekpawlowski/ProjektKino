@@ -45,11 +45,13 @@ class MoviesController extends Controller
 
     public function create()
     {
+        $this->authorize('create',App\Models\Movie::class);
         return view('movies.create');
     }
 
     public function store()
     {
+        $this->authorize('create',App\Models\Movie::class);
         $data = request()->validate([
             'title' => 'required',
             'description' => '',
@@ -71,11 +73,13 @@ class MoviesController extends Controller
 
     public function edit(Movie $movie)
     {
+        $this->authorize('update',App\Models\Movie::class);
         return view('movies.edit',compact('movie'));
     }
 
     public function update(Movie $movie)
     {
+        $this->authorize('update',App\Models\Movie::class);
         $data = request()->validate([
             'title' => '',
             'description' => '',
@@ -89,6 +93,7 @@ class MoviesController extends Controller
 
     public function destroy(Movie $movie)
     {
+        $this->authorize('delete',App\Models\Movie::class);
         foreach ($movie->seances() as $seances ) {
             $seances->delete();
         }
