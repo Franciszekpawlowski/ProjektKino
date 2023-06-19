@@ -58,22 +58,6 @@
                     </div>
                 @endforeach
             </div>
-            {{-- <a href="/movie/{{ $movie->id }}">
-                <div class="col-6">
-                    <div>
-                        <img src="{{ $movie->imagePath }}">
-                    </div>
-                    <div>
-                        <h1>{{ $movie->title }}</h1>
-                    </div>
-                    <div>
-                        {{ $movie->description }}
-                    </div>
-                    <div>
-                        {{ $movie->length }}
-                    </div>
-                </div>
-            </a> --}}
         @endforeach
         </div>
     </div>

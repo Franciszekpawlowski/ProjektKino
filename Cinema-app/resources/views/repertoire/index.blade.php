@@ -10,7 +10,8 @@
 </head>
 <body>
     <!-- Navigation -->
-    @include('cinema.navbar')
+    @include('layouts.navbar')
+    @include('layouts.admin.movie')
 
     <div class="repertoire-container">
         <div class="repertoire-row">
