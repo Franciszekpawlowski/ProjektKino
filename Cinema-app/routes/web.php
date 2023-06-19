@@ -22,6 +22,8 @@ use App\Http\Controllers\SeanceController;
 Route::get('/', function () {
     return view('app');
 });
+Route::get('/next-movie/{id}', [MoviesController::class, 'nextMovie'])->name('repertoire.index');
+
 
 Route::get('/repertoire', [MoviesController::class, 'index'])->name('repertoire.index');
 
@@ -40,7 +42,7 @@ Route::get('/cinema/{cinema}/edit', [CinemaController::class, 'edit'] )->name("c
 Route::patch('/cinema/{cinema}', [CinemaController::class, 'update'] )->name("cinemas.update");
 Route::delete('/cinema/{cinema}', [CinemaController::class, 'destroy'] )->name("cinemas.destroy");
 
-Route::get('/reservation', [SeatsReservation::class, 'index'] )->name("movies.index");
+Route::get('/reservation', [SeatsReservation::class, 'index'] )->name("reservation.reservation");
 
 // Route::get('/seance', [SeanceController::class, 'index'])->name('seance.index');
 // Route::get('/seance/{seance}', [SeanceController::class, 'show'])->name('seance.show');

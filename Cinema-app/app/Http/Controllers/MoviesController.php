@@ -25,6 +25,15 @@ class MoviesController extends Controller
         ]);
         
     }
+    public function nextMovie($id){
+        $movie = Movie::where('id', '>', $id)->orderBy('id')->first();
+        if (!$movie) {
+            // If there's no next movie, wrap around to the first one
+            $movie = Movie::orderBy('id')->first();
+        }
+        return response()->json($movie);
+    }
+    
 
     public function show($id)
     {
