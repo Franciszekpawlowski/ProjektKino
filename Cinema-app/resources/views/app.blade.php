@@ -8,7 +8,7 @@
     <link href="{{ asset('css/screen.css') }}" rel="stylesheet">
 </head>
 <body>
-    @include('cinema.navbar')
+    @include('layouts.navbar')
 
     <div class="cinema-screen-container">
         <section class="movie-display">
@@ -18,8 +18,8 @@
         </section>
     </div>
 
-    <!-- JS -->
+    {{-- <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/js/infinite-scroll.js"></script>
+    <script src="/js/infinite-scroll.js"></script> --}}
 </body>
 </html>
