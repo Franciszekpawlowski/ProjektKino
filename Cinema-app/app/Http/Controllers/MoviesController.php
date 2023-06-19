@@ -17,9 +17,13 @@ class MoviesController extends Controller
     public function index()
     {
         $movies = Movie::get();
-        return view('movies.index', [
+        if (Request()->wantsJson()) {
+            return response()->json($movies->toArray());
+        }
+        return view('layouts.repertoire', [
             'movies' => $movies
         ]);
+        
     }
 
     public function show($id)

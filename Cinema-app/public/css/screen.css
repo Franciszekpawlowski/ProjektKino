@@ -1,0 +1,50 @@
+html {
+    background-color: #090909;
+    scroll-snap-type: y mandatory;
+}
+
+.movie-display {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; 
+    background: url(/images/empty-movie-theatre.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.movie-container {
+    /* background-color: #dee5f6; */
+    position: absolute;
+    top: 6.5%;
+    left: 10%; /* Adjust to accommodate the right column */
+    width: 80%; /* Adjust to accommodate the right column */
+    height: 70%; /* Adjust to tighten the container */
+    overflow: hidden; 
+}
+
+.movie-card {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.outgoing {
+    transform: translateY(-100%);
+}
+
+.movie-card img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-content {
+    width: 75%; /* This makes the text content occupy the other half of the card */
+    padding: 10px;
+    text-align: left;
+    box-sizing: border-box; /* Include padding in total width */
+    overflow-y: auto; /* Add scrollbar if content is too long */
+}
