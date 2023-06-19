@@ -25,6 +25,8 @@ use App\Http\Controllers\SeanceController;
 Route::get('/', [CinemaController::class, 'index']);
 Route::get('/next-movie/{id}', [CinemaController::class, 'nextMovie']);
 
+Route::get('/repertoire', [MoviesController::class, 'index'])->name('repertoire');
+
 Route::get('/movie', [MoviesController::class, 'index'] )->name("movies.index");
 
 Route::post('/movie', [MoviesController::class, 'store'] )->name('movies.store');

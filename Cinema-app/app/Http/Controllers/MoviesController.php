@@ -20,7 +20,7 @@ class MoviesController extends Controller
         if (Request()->wantsJson()) {
             return response()->json($movies->toArray());
         }
-        return view('movies.index', [
+        return view('layouts.repertoire', [
             'movies' => $movies
         ]);
         
