@@ -44,3 +44,7 @@ Route::get('/reservation', [SeatsReservation::class, 'index'] )->name("movies.in
 
 // Route::get('/seance', [SeanceController::class, 'index'])->name('seance.index');
 // Route::get('/seance/{seance}', [SeanceController::class, 'show'])->name('seance.show');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
