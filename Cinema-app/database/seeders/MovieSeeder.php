@@ -36,13 +36,13 @@ class MovieSeeder extends Seeder
             [
                 'title' => 'Igrzyska śmierci: W pierścieniu ognia',
                 'imagePath' => 'https://wallpaperswide.com/download/the_hunger_games_catching_fire_movie-wallpaper-2400x1350.jpg',
-                'length' => $this->minutesToTime(130),
+                'length' => $this->minutesToTime(150),
                 'description' => 'Description of the movie 4',
             ],
             [
                 'title' => 'Legion samobójców',
                 'imagePath' => 'https://a-static.besthdwallpaper.com/the-suicide-squad-harley-quinn-wallpaper-2560x1440-87232_51.jpg',
-                'length' => $this->minutesToTime(130),
+                'length' => $this->minutesToTime(120),
                 'description' => 'Description of the movie 5',
             ],
             [
@@ -54,25 +54,25 @@ class MovieSeeder extends Seeder
             [
                 'title' => 'Władca Pierścieni: Powrót króla',
                 'imagePath' => 'https://www.testergier.pl/wp-content/uploads/2021/01/powrot-krola.jpg',
-                'length' => $this->minutesToTime(130),
+                'length' => $this->minutesToTime(200),
                 'description' => 'Description of the movie 7',
             ],
             [
                 'title' => 'Zwierzogród',
                 'imagePath' => 'https://fwcdn.pl/nph/867323/2020/25927_1.11.jpg',
-                'length' => $this->minutesToTime(130),
+                'length' => $this->minutesToTime(110),
                 'description' => 'Description of the movie 8',
             ],
             [
                 'title' => 'Split',
                 'imagePath' => 'https://images6.alphacoders.com/800/800835.jpg',
-                'length' => $this->minutesToTime(130),
+                'length' => $this->minutesToTime(120),
                 'description' => 'Description of the movie 9',
             ],
             [
                 'title' => 'Joker',
                 'imagePath' => 'https://images.hdqwalls.com/wallpapers/joker-2019-76.jpg',
-                'length' => $this->minutesToTime(130),
+                'length' => $this->minutesToTime(120),
                 'description' => 'Description of the movie 10',
             ],
         ]);
