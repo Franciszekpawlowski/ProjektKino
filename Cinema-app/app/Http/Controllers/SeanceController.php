@@ -42,12 +42,14 @@ class SeanceController extends Controller
     public function show($id)
     {
         $seance = Seance::findOrFail($id);
-        dd($seance);
-        return view('seance.show', [
-            'seance' => $seance
-        ]);
 
+        if (request()->expectsJson()) {
+            return response()->json($seance);
+        }
+
+        return view('seances.show', ['seance' => $seance]);
     }
+
 
     /**
      * Seance the form for editing the specified resource.
@@ -72,4 +74,5 @@ class SeanceController extends Controller
     {
         //
     }
+
 }

@@ -35,6 +35,7 @@ Route::get('/movie/{movie}/edit', [MoviesController::class, 'edit'] )->name("mov
 Route::patch('/movie/{movie}', [MoviesController::class, 'update'] )->name("movies.update");
 Route::delete('/movie/{movie}', [MoviesController::class, 'destroy'] )->name("movies.destroy");
 
+Route::get('/ajax/cinemas', [CinemaController::class, 'ajaxIndex']);
 Route::post('/cinema', [CinemaController::class, 'store'] )->name('cinemas.store');
 Route::get('/cinema/create', [CinemaController::class, 'create'] )->name("cinemas.create");
 Route::get('/cinema/{cinema}', [CinemaController::class, 'show'] )->name("cinemas.show");
@@ -43,7 +44,15 @@ Route::patch('/cinema/{cinema}', [CinemaController::class, 'update'] )->name("ci
 Route::delete('/cinema/{cinema}', [CinemaController::class, 'destroy'] )->name("cinemas.destroy");
 
 Route::get('/reservation', [SeatsReservation::class, 'index'] )->name("reservation.reservation");
+Route::get('/movie/{movie}/cinemas', function ($id) {
+    $movie = App\Models\Movie::findOrFail($id);
+    return $movie->cinemas;
+});
 
+Route::get('/cinema/{cinema}/seances', function ($id) {
+    $cinema = App\Models\Cinema::findOrFail($id);
+    return $cinema->seances;
+});
 // Route::get('/seance', [SeanceController::class, 'index'])->name('seance.index');
 // Route::get('/seance/{seance}', [SeanceController::class, 'show'])->name('seance.show');
 
