@@ -1,3 +1,48 @@
 .selected {
     background-color: #00ff00; /* Change to the color you want */
 }
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    height: 10vh;
+    width: 100vw;
+    text-align: center;
+}
+.cinemaHall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.seat {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid black;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selectedSeat {
+    background-color: green;
+}
+
+.seatLabel {
+    font-size: 16px;
+    font-weight: 700;
+}
