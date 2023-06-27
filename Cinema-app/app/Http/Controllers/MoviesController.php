@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use App\Models\Movie;
 
 /**
@@ -61,6 +62,9 @@ class MoviesController extends Controller
 
         $filePath = request('image') -> store("moviePicture",'public');
 
+        $image =  Image::make(public_path("storage/{$filePath}")) -> fit(1920,1080);
+        $image -> save();
+
         Movie::create([
             'title' => $data['title'],
             'description' => $data['description'],
@@ -87,7 +91,19 @@ class MoviesController extends Controller
             'time' => ''
         ]);
 
-        $movie->update($data);
+        if (request('image')) {
+            $filePath = request('image') -> store("moviePicture",'public');
+
+            $image =  Image::make(public_path("storage/{$filePath}")) -> fit(1920,1080);
+            $image -> save();
+            }
+
+        $movie->update(array_merge(
+            $data,
+            ['imagePath' => "/storage/" . $filePath ]
+            
+            )
+        );
         return redirect("/movie/{$movie->id}");    
     }
 
