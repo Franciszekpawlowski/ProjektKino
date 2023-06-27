@@ -13,7 +13,13 @@
 
         <select id="cinemaSelect"></select>
         <div id="seanceButtons"></div>
+        
     </div>
+    
+    <div>
+        @include('reservation.reservation')
+    </div>
+   
 
     <script src="{{ asset('js/reservation.js') }}"></script>
     <script>

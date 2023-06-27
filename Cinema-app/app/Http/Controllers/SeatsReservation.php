@@ -7,6 +7,6 @@ class SeatsReservation extends Controller
     public function index()
     {
         // Pass them to the view
-        return view('layouts.reservation');
+        return view('reservation.reservation');
     }
 }
